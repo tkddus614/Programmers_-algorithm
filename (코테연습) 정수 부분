@@ -1,0 +1,19 @@
+실수 flo가 매개 변수로 주어질 때, flo의 정수 부분을 return하도록 solution 함수를 완성해주세요.
+
+제한사항
+0 ≤ flo ≤ 100
+
+flo	      result
+1.42	      1
+69.32	      69
+
+function solution(flo) {
+    return Math.floor(flo)
+}
+
+Math 메서드를 이용해서 간단히 풀이 가능.
+
+Math.trunc를 사용해서도 가능한데 floor와는 좀 차이가 있다.
+
+예를 들어 값이 음수인 -23.55인 경우 Math.floor는 -24를 출력하지만 trunc는 소수점을 전부 버리므로 어떤 메서드를 사용할지 주의해서 사용하면 될 부분이다.
+추가적으로 ~~ 연산자도 trunc와 똑같이 작동한다.
