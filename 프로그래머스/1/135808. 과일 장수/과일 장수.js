@@ -1,14 +1,9 @@
 function solution(k, m, score) {
-    const result = []
-    const sortedArr = score.sort((a,b) => b - a)
+    let answer = 0;
+    const sortedScore = score.sort((a,b) => a - b).slice(score.length % m)
     
-    for (i=0; i<sortedArr.length;i+=m) {
-      result.push(sortedArr.slice(i, i+m))
+    for (i=0; i<sortedScore.length;i+=m) {
+      answer += sortedScore[i] * m
     }
-  
-    const filteredArr = result.filter((v) => v.length === m)
-  
-    return filteredArr.reduce((acc, cur) => {
-      return acc += (cur[cur.length -1] * cur.length)
-    }, 0)
+  return answer
 }
